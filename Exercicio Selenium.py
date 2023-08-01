@@ -1,5 +1,10 @@
-# NFs
- from selenium import webdriver
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[45]:
+
+
+from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
@@ -17,12 +22,17 @@ servico = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=servico, options=options)
 
 
+# In[46]:
+
 
 import os
 
 caminho = os.getcwd()
 arquivo = caminho + r'\login.html'
 navegador.get(arquivo)
+
+
+# In[47]:
 
 
 #Entrar na página de Login
@@ -32,6 +42,8 @@ navegador.find_element(By.XPATH, '/html/body/div/form/input[2]').send_keys('1234
 #Clicar no botão Login
 navegador.find_element(By.XPATH, '/html/body/div/form/button').click()
 
+
+# In[48]:
 
 
 #Importar Base de Dados
@@ -43,6 +55,8 @@ clientes_df = pd.read_excel('NotasEmitir.xlsx')
 
 display(clientes_df)
 
+
+# In[49]:
 
 
 
@@ -104,5 +118,26 @@ for linha in clientes_df.index:
     navegador.refresh()
 
 
+# In[ ]:
+
 
 navegador.quit()
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
